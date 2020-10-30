@@ -1,13 +1,123 @@
 body {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+#alert-messages-container{
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+
+#alert-box{
+  display: none;
+}
+
+#login-container, #signup-container{
+  width: 50%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.align-center-vertically{
+  position: "relative";
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align-center-vertically-abs{
+  position: "absolute";
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.align-center-vertically-flex{
+  display: flex;
+  align-items:center;
+}
+
+.d-block{
+  display: block;
+}
+
+.circle-loader {
+  width: 7em;
+  height: 7em;
+  margin-bottom: 3.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-left-color: #5cb85c;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  top: 30%;
+  left: 45%;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+}
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: #5cb85c;
+  transition: border 500ms ease-out;
+}
+.checkmark {
+  display: none;
+}
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+}
+.checkmark:after {
+  opacity: 1;
+  height: 3.5em;
+  width: 1.75em;
+  transform-origin: left top;
+  border-right: 3px solid #5cb85c;
+  border-top: 3px solid #5cb85c;
+  content: '';
+  left: 1.75em;
+  top: 3.5em;
+  position: absolute;
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+ }
+  100% {
+    transform: rotate(360deg);
+ }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+ }
+  20% {
+    height: 0;
+    width: 1.75em;
+    opacity: 1;
+ }
+  40% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+ }
+  100% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+ }
 }
